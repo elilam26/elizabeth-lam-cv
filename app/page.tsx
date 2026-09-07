@@ -14,7 +14,7 @@ const profileLinks = [
   { label: 'ORCID', icon: 'orcid', href: 'https://orcid.org/0000-0002-0388-4660' },
   { label: 'RESILMIN', icon: 'resilmin', href: 'https://resilmin.ucn.cl/', role: { en: 'Director', es: 'Directora' } },
   { label: 'Relaves UCN', icon: 'relaves', href: 'https://relaves.ucn.cl/', role: { en: 'Director', es: 'Directora' } },
-  { label: 'ORRM', icon: 'orrm', href: 'https://orrm.ucn.cl/', role: { en: 'Alternate Director', es: 'Directora alterna' } },
+  { label: 'ORRM', icon: 'orrm', href: 'https://orrm.ucn.cl/', role: { en: 'Co-Director', es: 'Co-Directora' } },
 ] as const;
 
 type ProfileIconName = (typeof profileLinks)[number]['icon'];
@@ -123,7 +123,7 @@ const currentProjects = [
     description: { en: 'Development of an agglomeration process for copper mine tailings, enabling their reuse as construction material and advancing circular economy strategies.', es: 'Desarrollo de un proceso de aglomeración de relaves de cobre que permite reutilizarlos como material de construcción y avanzar en estrategias de economía circular.' },
   },
   {
-    role: { en: 'Alternate Director', es: 'Directora alterna' }, roleClass: 'pi',
+    role: { en: 'Co-Director', es: 'Co-Directora' }, roleClass: 'pi',
     title: { en: 'Regional Observatory of Mining Tailings (ORRM)', es: 'Observatorio Regional de Relaves Mineros (ORRM)' },
     meta: 'FRPD Antofagasta · 2025–2027', href: 'https://orrm.ucn.cl/',
     description: { en: 'A regional platform for monitoring, characterizing, and promoting circular economy strategies for mining tailings in the Antofagasta region.', es: 'Plataforma regional para monitorear, caracterizar y promover estrategias de economía circular para los relaves mineros de la Región de Antofagasta.' },
