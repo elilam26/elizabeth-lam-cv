@@ -12,7 +12,7 @@ const profileLinks = [
   { label: 'LinkedIn', icon: 'linkedin', href: 'https://www.linkedin.com/in/elizabeth-lam-esquenazi-bb85578b/' },
   { label: 'Google Scholar', icon: 'scholar', href: 'https://scholar.google.com/citations?hl=es&user=Lw0EYoAAAAAJ&view_op=list_works&sortby=pubdate' },
   { label: 'ORCID', icon: 'orcid', href: 'https://orcid.org/0000-0002-0388-4660' },
-  { label: 'RESILMIN', icon: 'resilmin', href: 'https://resilmin.ucn.cl/' },
+  { label: 'RESILMIN', icon: 'resilmin', href: 'https://resilmin.ucn.cl/', role: { en: 'Director', es: 'Directora' } },
   { label: 'Relaves UCN', icon: 'relaves', href: 'https://relaves.ucn.cl/', role: { en: 'Director', es: 'Directora' } },
   { label: 'ORRM', icon: 'orrm', href: 'https://orrm.ucn.cl/', role: { en: 'Alternate Director', es: 'Directora alterna' } },
 ] as const;
