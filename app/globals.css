@@ -23,11 +23,20 @@ button:focus-visible,a:focus-visible { outline:3px solid #7ca7c4; outline-offset
 .follow-menu { position:absolute; z-index:30; top:calc(100% + 1.05rem); right:0; width:300px; border:1px solid #dde0e2; border-radius:12px; padding:1.1rem; background:#fff; box-shadow:var(--shadow); }
 .menu-tip { position:absolute; top:-9px; right:52px; width:16px; height:16px; border-top:1px solid #dde0e2; border-left:1px solid #dde0e2; background:#fff; transform:rotate(45deg); }
 .location { display:flex; align-items:center; gap:.7rem; margin:0 0 .8rem; padding:0 .25rem .85rem; border-bottom:1px solid var(--line); color:var(--body); font-size:.95rem; }
-.location span { color:#202326; font-size:.62rem; }
+.location svg { width:18px; height:18px; flex:0 0 auto; color:#202326; }
 .follow-menu ul { display:grid; gap:.25rem; margin:0; padding:0; list-style:none; }
 .follow-menu a { display:grid; grid-template-columns:32px 1fr; align-items:center; gap:.75rem; border-radius:8px; padding:.62rem .55rem; color:var(--body); text-decoration:none; }
 .follow-menu a:hover { background:var(--soft); color:var(--ink); }
-.link-mark { display:grid; width:28px; height:28px; place-items:center; border-radius:6px; background:var(--ink); color:#fff; font-size:.67rem; font-weight:700; letter-spacing:-.02em; }
+.profile-icon { display:grid; width:28px; height:28px; place-items:center; font-size:25px; line-height:1; }
+.profile-icon svg { width:25px; height:25px; }
+.researchgate-icon { display:flex; align-items:center; justify-content:center; color:#00a99d; font-size:23px; font-weight:700; letter-spacing:-.08em; }
+.researchgate-icon sup { position:relative; top:-.48em; margin-left:.06em; font-size:.43em; letter-spacing:0; }
+.linkedin-icon { color:#0a66c2; }
+.scholar-icon { color:#4285f4; }
+.orcid-icon { color:#a6ce39; }
+.resilmin-icon { overflow:hidden; }
+.resilmin-icon img { width:28px; height:auto; max-width:none; transform:translateY(-7px); }
+.relaves-icon { color:#8b6a43; }
 .follow-menu small { display:block; margin-top:.08rem; color:var(--muted); font-size:.74rem; }
 .menu-close { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
 .about-section { margin-top:clamp(3rem,6vw,5rem); }

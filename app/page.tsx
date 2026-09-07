@@ -1,17 +1,40 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { FaLinkedin, FaLocationDot, FaMountain } from 'react-icons/fa6';
+import { SiGooglescholar, SiOrcid } from 'react-icons/si';
 
 type Language = 'en' | 'es';
 
 const profileLinks = [
-  { label: 'ResearchGate', short: 'RG', href: 'https://www.researchgate.net/profile/Elizabeth-Lam-Esquenazi/publications' },
-  { label: 'LinkedIn', short: 'in', href: 'https://www.linkedin.com/in/elizabeth-lam-esquenazi-bb85578b/' },
-  { label: 'Google Scholar', short: 'GS', href: 'https://scholar.google.com/citations?hl=es&user=Lw0EYoAAAAAJ&view_op=list_works&sortby=pubdate' },
-  { label: 'ORCID', short: 'iD', href: 'https://orcid.org/0000-0002-0388-4660' },
-  { label: 'RESILMIN', short: 'R', href: 'https://resilmin.ucn.cl/' },
-  { label: 'Relaves UCN', short: 'RU', href: 'https://relaves.ucn.cl/', role: { en: 'Director', es: 'Directora' } },
+  { label: 'ResearchGate', icon: 'researchgate', href: 'https://www.researchgate.net/profile/Elizabeth-Lam-Esquenazi/publications' },
+  { label: 'LinkedIn', icon: 'linkedin', href: 'https://www.linkedin.com/in/elizabeth-lam-esquenazi-bb85578b/' },
+  { label: 'Google Scholar', icon: 'scholar', href: 'https://scholar.google.com/citations?hl=es&user=Lw0EYoAAAAAJ&view_op=list_works&sortby=pubdate' },
+  { label: 'ORCID', icon: 'orcid', href: 'https://orcid.org/0000-0002-0388-4660' },
+  { label: 'RESILMIN', icon: 'resilmin', href: 'https://resilmin.ucn.cl/' },
+  { label: 'Relaves UCN', icon: 'relaves', href: 'https://relaves.ucn.cl/', role: { en: 'Director', es: 'Directora' } },
 ] as const;
+
+type ProfileIconName = (typeof profileLinks)[number]['icon'];
+
+function ProfileIcon({ name }: { name: ProfileIconName }) {
+  if (name === 'researchgate') {
+    return <span className="profile-icon researchgate-icon" aria-hidden="true">R<sup>G</sup></span>;
+  }
+
+  if (name === 'resilmin') {
+    return <span className="profile-icon resilmin-icon" aria-hidden="true"><img src="./resilmin-icon.png" alt="" /></span>;
+  }
+
+  const icons = {
+    linkedin: <FaLinkedin />,
+    scholar: <SiGooglescholar />,
+    orcid: <SiOrcid />,
+    relaves: <FaMountain />,
+  };
+
+  return <span className={`profile-icon ${name}-icon`} aria-hidden="true">{icons[name]}</span>;
+}
 
 const content = {
   en: {
@@ -91,12 +114,12 @@ export default function Home() {
             {followOpen && (
               <div className="follow-menu" id="follow-menu" role="dialog" aria-label={copy.follow}>
                 <div className="menu-tip" aria-hidden="true" />
-                <p className="location"><span aria-hidden="true">●</span>{copy.location}</p>
+                <p className="location"><FaLocationDot aria-hidden="true" />{copy.location}</p>
                 <ul>
                   {profileLinks.map((link) => (
                     <li key={link.href}>
                       <a href={link.href} target="_blank" rel="noreferrer">
-                        <span className="link-mark" aria-hidden="true">{link.short}</span>
+                        <ProfileIcon name={link.icon} />
                         <span>{link.label}{'role' in link && <small>{link.role[language]}</small>}</span>
                       </a>
                     </li>
